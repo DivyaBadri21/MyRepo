@@ -1,0 +1,22 @@
+{% extends "admin_panel/index.html" %}
+{% block content %}
+<table class=" table table-bordered">
+    <h2>User Details</h2>
+    <tr>
+        <th>User Name:</th>
+        <td>{{user.username}}</td>
+    </tr>
+    <tr>
+        <th>Firstname:</th>
+        <td>{{user.first_name}}</td>
+    </tr>
+    <tr>
+        <th>Lastname::</th>
+        <td>{{user.last_name}}</td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td>{{user.email}}</td>
+    </tr>
+</table>
+{% endblock %}
