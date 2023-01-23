@@ -1,0 +1,9 @@
+{% extends 'todoApp/base.html' %}
+{% block content %}
+    <p>Are you sure want to delete the task, {{todoitems}}</p>
+    <a href="{% url 'retrieve_view' %}"><input type="submit" value = "Cancel"></a>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="submit" value = "Confirm">
+        </form>
+{% endblock %}

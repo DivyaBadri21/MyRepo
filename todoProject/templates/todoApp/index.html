@@ -1,0 +1,21 @@
+{% extends 'todoApp/base.html' %}
+{% block content %}
+	<h1>Tasks</h1>
+	<table>
+		<thead>
+			<th>Task</th>
+			<th>Description</th>
+			<th>Created_On</th>
+		</thead>
+		<tr>
+			{% for todoitem in todoitems %}
+				<td>{{todoitem.task_name}}</td>
+				<td>{{todoitem.task_description}}</td>
+				<td> <a href ='/update/{{todoitem.id}}'> Update </a> </td>
+				<td> <a href ='/delete/{{todoitem.id}}'> Delete </a> </td>
+
+				</tr>
+	{% endfor %}
+</table>
+	<a href="{% url 'create_view' %}"><button type="button">Add task</button></a>
+{% endblock %}
