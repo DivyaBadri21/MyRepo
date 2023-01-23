@@ -1,0 +1,17 @@
+{% extends 'shopApp/layouts/main.html' %}
+{% block content %}
+    <h1>Welcome, Please register</h1>
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">
+            {{message}}
+        </div>
+        {% endfor %}
+    {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Register</button>
+        </form>
+            <p>Already User ?<a href="{% url 'login' %}">Login now</a></p>
+{% endblock content %}

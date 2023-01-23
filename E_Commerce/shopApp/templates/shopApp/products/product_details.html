@@ -1,0 +1,16 @@
+
+{% extends 'shopApp/layouts/main.html' %}
+{% block title %}
+    Online Shopping
+{% endblock title %}
+        
+{% block content %}
+    <h1>{{products}} Details</h1>
+    <!-- below image is products.prod_img(name from Prod class in models.py and all others also from models.py)-->
+    <img src="{{products.product_image.url}}" alt={{products}}>
+    <h5>Product Name: {{products}}</h5>
+    <h6>Vendor: {{products.vendor}}</h6>
+    <h6>Description: {{products.description}}</h6>
+    <h6>Original Price: <s>{{products.original_price}}</s></h6>
+    <h5>Selling Price: {{products.selling_price}}</h5>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'shopApp/layouts/main.html' %}
+{% block content %}
+<h3>Our most popular products based on sale</h3>
+    <h3>Collections</h3>
+    {% for item in category %}
+    <!-- below image is item.img(name from Cate class in models.py)-->
+            <a href="{% url 'collections' item.name%}">
+                <img src="{{item.image.url}}" alt="Categories">
+                <h5>{{item.name}}</h5>
+                <p>{{item.description}}</p> 
+            </a>
+    {% endfor %}
+{% endblock content %}

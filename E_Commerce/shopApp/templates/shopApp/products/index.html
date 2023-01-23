@@ -1,0 +1,18 @@
+{% extends 'shopApp/layouts/main.html' %}
+{% block title %}
+    Online Shopping
+{% endblock title %}
+        
+{% block content %}
+    <h1>{{category_name}} Products</h1>
+{% for item in products %}
+           <!--<a href="{% url 'collections' item.name%}"> --> 
+            <a href="{% url 'product_details' category_name item.name%}">
+                <h5>{{item.name}}</h5>
+                <img src="{{item.product_image.url}}" alt="Categories">
+            </a>
+                <p>Original Price: <s>{{item.original_price}}</s></p> 
+                <p>Offer Price: {{item.selling_price}}</p>
+            
+    {% endfor %}
+{% endblock content %}
